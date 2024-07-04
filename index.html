@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do app</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div
+      class="w-full md:max-w-5xl mx-auto flex items-center h-screen justify-center"
+    >
+      <div class="flex flex-col shadow-lg pl-5 pr-5 py-10 w-full rounded-md">
+        <div class="grid justify-items-center pt-8">
+          <h1 class="text-4xl font-bold">Task Manager</h1>
+          <p class="text-gray-600 pt-3">
+            Stay organized and productive with our intuitive to-do app.
+          </p>
+          <div class="pt-6 flex flex-col md:flex-row items-center gap-4">
+            <input
+              type="text"
+              id="input_title"
+              placeholder="Add a new task in todo"
+              class="w-96 p-2 border bg-gray-100 rounded-md"
+            />
+            <button
+              id="input_btn"
+              class="bg-black text-white px-8 py-2 rounded-md"
+            >
+              Add Task
+            </button>
+          </div>
+          <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-10 w-full">
+            <div style="min-height: 13rem;" class="w-full min-h-52   max-h-max rounded-md overflow-hidden shadow-lg">
+              <h1 class="px-5 py-3 font-bold bg-blue-100">To Do</h1>
+              <div class="p-4" id="todo">
+                
+              </div>
+            </div>
+
+            <div style="min-height: 13rem;" class="w-full min-h-52 h-fit max-h-max rounded-md overflow-hidden shadow-lg">
+              <h1 class="px-5 py-3 font-bold bg-purple-100">In Progress</h1>
+              <div class="p-4" id="In Progress">
+
+              </div>
+            </div>
+            <div
+            style="min-height: 13rem;" class="w-full  min-h-52 max-h-max rounded-md overflow-hidden shadow-lg"
+            >
+              <h1 class="px-5 py-3 font-bold bg-green-100">Completed</h1>
+              <div class="p-4" id="complete">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
