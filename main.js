@@ -7,9 +7,15 @@ const allElements = [
   document.getElementById("complete"),
 ];
 
+
+/*_________________________________URL_________________________________________________*/
+
 let baseUrl = "https://todo-crudl.deno.dev";
 let userId = "tanim";
 let url = `${baseUrl}/${userId}/todos`;
+
+
+/*___________________________Add To-do_________________________________________________*/
 
 inputBtn.addEventListener("click", async () => {
   let title = inputElement.value;
@@ -24,7 +30,6 @@ inputBtn.addEventListener("click", async () => {
       const data = await response.json();
       console.log(data);
       loadTodo();
-      // renderTodo();
     } catch (error) {
       console.error("Got Error", error);
     }
@@ -32,6 +37,9 @@ inputBtn.addEventListener("click", async () => {
     alert("Add To-Do");
   }
 });
+
+
+/*___________________________Print in To-do_________________________________________________*/
 
 function renderTodo(todos) {
   let todoElement = document.getElementById("todo");
@@ -70,6 +78,9 @@ function renderTodo(todos) {
   }
 }
 
+/*___________________________Print in In Progress To-do_________________________________________________*/
+
+
 function renderInProgress(todos) {
   let todoElement = document.getElementById("In Progress");
   todoElement.innerHTML = "";
@@ -107,6 +118,10 @@ function renderInProgress(todos) {
   }
 }
 
+
+
+
+/*___________________________Print in Complete To-do_________________________________________________*/
 function renderComplete(todos) {
   let todoElement = document.getElementById("complete");
   todoElement.innerHTML = "";
@@ -144,6 +159,9 @@ function renderComplete(todos) {
   }
 }
 
+
+/*___________________________Load To-do_________________________________________________*/
+
 async function loadTodo() {
   const response = await fetch(url);
   const todos = await response.json();
@@ -179,6 +197,7 @@ allElements.forEach((element) => {
 
 
 /*____________________________________Change Status__________________________________________ */
+
 allElements.forEach((element) => {
   if (element) {
     element.addEventListener("click", async (event) => {
@@ -210,5 +229,7 @@ allElements.forEach((element) => {
     });
   }
 });
+
+/* _________________load_____________________ */
 
 loadTodo();
